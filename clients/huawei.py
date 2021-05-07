@@ -61,7 +61,7 @@ class HuaWei(BaseHuaWei):
         await asyncio.sleep(5)
 
 
-        await self.page.click('.textBtn')
+        await self.page.click('.hwid-smsCode')
         await asyncio.sleep(20)
 
         await self.page.type('input[class="hwid-input"]','797881',{'delay': 10})
