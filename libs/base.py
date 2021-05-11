@@ -63,7 +63,7 @@ class BaseClient:
     async def init(self, **kwargs):
         # launcher.DEFAULT_ARGS.remove('--enable-automation')
         self.browser = await launch(ignorehttpserrrors=True, headless=kwargs.get('headless', True),
-                                    args=['--disable-infobars', '--no-sandbox', '--start-maximized'])
+                                    args=['--disable-infobars', '--no-sandbox', '--start-maximized','--user-data-dir=./opt/a'])
         self.page = await self.browser.newPage()
         try:
             self.page.on('dialog', lambda dialog: asyncio.ensure_future(self.close_dialog(dialog)))
